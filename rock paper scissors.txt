@@ -1,0 +1,33 @@
+import random
+u=0
+c=0
+a = 1
+while a < 4:
+  options = ("rock", "scissor", "paper")
+  cc = random.choice(options)
+  n = input('\ntype paper to choose paper, rock for rock, scissor for scissors\n')
+  if (n == 'paper')or(n == 'rock') or (n == 'scissor'):
+    print(f"you chose :{n}")
+    print(f"computer chose :{cc}")
+  
+  if cc == n:
+    print(f'game {a} - tie, you-{u} bot-{c}\n')
+  elif (cc == 'scissor'and n == "rock")or\
+    (cc == 'rock'and n == "paper") or\
+    (cc == 'paper'and n == "scissor"):
+    u= u+1
+    print(f'game {a} -  you won, you-{u} bot-{c}\n')
+  else:
+    c= c+1 
+    print(f'game {a} - computer won, you-{u} bot-{c}\n')
+  a = a + 1
+  if (u==2)or(c==2) or (a==4):
+    print('Game over')
+    m = input('want to play again? "yes" or "no"\n')
+    if (m=='yes'):
+        a=1
+        u=0
+        c=0
+    else:
+        a=a
+          
